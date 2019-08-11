@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <body>
+    <Title> Hip Hop Hangman </Title>
+
+    <script type="text/javascript" src="hangman.html"></script>
+    
+    <script>
+   
+            
+             var getName = prompt( " What's your name?")
+             var confirmName = confirm (name + "Are you ready to play Hip Hop Hangman?");
+            prompt("Great! " + name + " Lets play!");   
+            
+         // Array of Random Words for game //
+       
+             var words = ["doug e fresh", "nas", "rakim", "slick rick", "scarface", "notorious big", "jay z", "ice cube", "nwa", "ll cool j", "snoop dogg", "lil wayne", "dmx", "will smith", "tupac"]; 
+       
+        // Pick random word from array //
+
+             var pickWord = words[Math.floor(Math.random() * words.length)];
+            
+        // var equation for answer array to show letter spaces//
+
+            var answerArray = []; 
+                for (var i = 0; i < words.legnth; i++) {
+                answerArray[i] = "_";
+            }
+
+        // variable for showing remaining letters //
+        
+            var remainingLetters = words.length;
+
+        // MY LOOP //
+        //need to link function vvvv  to a class or ID //
+        (i).on("click", function() {
+
+            while (remainingLetters > 0) {
+        // to show progress //        
+            alert(answerArray.join (" "));
+        // to get a guee from player //
+            var guess = prompt( " Hangman or Die!!!! ");   
+        // ig guess is blank//
+            if (guess === null){
+                break;
+            } else if(guess.legnth !== 1) {
+                alert ("Try Again " + name + "!");
+                }else {
+
+            for (var j = 0; j < words.legnth; j++) {
+                if (words[j] === guess) {
+                    answerArray[j] = guess;
+                    remainingLetters--;// < takes one away
+                }
+                }
+            }
+                } //< ends game loop //
+        })    
+
+            var correctGuesses = [];
+            var wrongGuesses = [];
+
+        //declare starting values and write to document
+            var wins = 0;
+            var loses = 0;
+
+       
+        //give the answer//
+                alert(answerArray.join(" "));
+
+        // Congrats Player //
+                alert("Great Job" + name + " !!!!!")
+                
+                       
+    
+    
+    
+    
+    </script>
+    </body>   
